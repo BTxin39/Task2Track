@@ -1,0 +1,26 @@
+{
+  "version": 3,
+  "cmakeMinimumRequired": {
+    "major": 3,
+    "minor": 21,
+    "patch": 0
+  },
+  "configurePresets": [
+    {
+      "name": "linux-vcpkg",
+      "displayName": "Linux / WSL (vcpkg, Debug)",
+      "generator": "Unix Makefiles",
+      "binaryDir": "${sourceDir}/build-vcpkg",
+      "toolchainFile": "$env{HOME}/vcpkg/scripts/buildsystems/vcpkg.cmake",
+      "cacheVariables": {
+        "CMAKE_BUILD_TYPE": "Debug"
+      }
+    }
+  ],
+  "buildPresets": [
+    {
+      "name": "linux-vcpkg",
+      "configurePreset": "linux-vcpkg"
+    }
+  ]
+}
